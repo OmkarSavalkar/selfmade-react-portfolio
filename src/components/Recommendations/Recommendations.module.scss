@@ -1,0 +1,148 @@
+@use "sass:math";
+
+.recommendation {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  /* SAME DARK BASE */
+  background: #04040a;
+}
+
+/* --- SAME NEON BLOBS FROM ABOUT SECTION --- */
+
+.shape1,
+.shape2 {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(160px);
+  z-index: 0;
+}
+
+.shape1 {
+  background: rgba(90, 150, 255, 0.45);
+  top: -150px;
+  left: -120px;
+}
+
+.shape2 {
+  background: rgba(200, 120, 255, 0.45);
+  bottom: -150px;
+  right: -120px;
+}
+
+/* Floating neon particles (same as About) */
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(125, 150, 255, 0.8);
+  filter: blur(6px);
+  animation: floatParticle 6s infinite ease-in-out;
+  z-index: 3;
+}
+
+@for $i from 1 through 14 {
+  .particle:nth-child(#{$i}) {
+    top: math.random(95) * 1%;
+    left: math.random(95) * 1%;
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(20px, -20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+}
+
+/* ---------------- Title ---------------- */
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  z-index: 10;
+  margin-bottom: 30px;
+}
+
+/* ---------------- Slider ---------------- */
+.sliderContainer {
+  position: relative;
+  width: 950px;
+  height: 650px; /* Bigger */
+  margin-bottom: 50px;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 500px;
+  }
+}
+
+.recImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+/* ---------------- Social Buttons ---------------- */
+.socials {
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+
+  img {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.22);
+  }
+}

@@ -71,6 +71,24 @@ export default function Hero() {
             used across USA & UAE with clean architecture, optimized UI, and
             complete feature ownership.
           </p>
+          <div className={styles.socials}>
+            <a
+              className={styles.socialBtn}
+              href="https://www.linkedin.com/in/omkar-savalkar"
+              target="_blank"
+            >
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" />
+              Connect on LinkedIn
+            </a>
+            <a
+              className={styles.socialBtn}
+              href="https://drive.google.com/file/d/1FVCo56EspaZRZ440l_KcXS0ySwHnG20R/view?usp=sharing"
+              target="_blank"
+            >
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135692.png" />
+              Resume
+            </a>
+          </div>
         </motion.div>
 
         {/* RIGHT IMAGE SECTION */}

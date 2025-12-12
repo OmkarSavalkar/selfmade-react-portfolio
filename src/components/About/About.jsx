@@ -21,7 +21,7 @@ export default function About() {
   ];
 
   return (
-    <section className={styles.about} id="about">
+    <section className={styles.about} id="about" data-aos="fade-up">
       {/* Floating neon blobs */}
       <motion.div
         className={styles.shape1}
@@ -53,7 +53,8 @@ export default function About() {
           <p className={styles.text}>
             I’m a Frontend Engineer with <b>4.5 years</b> of experience building
             high-performance, scalable, and user-centric web applications using{" "}
-            <b>React, Vue, and Next.js</b>.
+            <b>React, Vue, and Next.js</b>. I hold a Bachelor’s degree (B.E) in
+            Computer Engineering (2021)
             <br />
             <br />I currently work at <b>Cavista (Axxess)</b>, contributing to
             enterprise healthcare platforms used by{" "}

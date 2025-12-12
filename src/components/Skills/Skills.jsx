@@ -74,7 +74,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className={styles.skills} id="skills">
+    <section className={styles.skills} id="skills" data-aos="fade-right">
       {/* background blobs */}
       <motion.div
         className={styles.shape1}
