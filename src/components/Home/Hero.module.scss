@@ -1,0 +1,390 @@
+/* Full-screen hero */
+.topLabel {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a0a0ff; /* subtle neon tint */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  z-index: 20;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh !important; // <-- IMPORTANT
+  height: 100vh !important; // <-- IMPORTANT
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* Neon floating blobs */
+.shape1,
+.shape2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+}
+
+/* Blue neon blob */
+.shape1 {
+  width: 450px;
+  height: 450px;
+  background: rgba(80, 150, 255, 0.45);
+  top: -120px;
+  left: -120px;
+}
+
+/* Purple neon blob */
+.shape2 {
+  width: 450px;
+  height: 450px;
+  background: rgba(180, 120, 255, 0.45);
+  bottom: -140px;
+  right: -140px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1350px;
+  z-index: 10; // ABOVE neon shapes
+
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+
+/* LEFT TEXT CONTENT */
+.left {
+  max-width: 550px;
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+
+  span {
+    color: #7b9dff;
+    text-shadow: 0 0 16px rgba(125, 150, 255, 0.6);
+    font-size: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 1.5rem;
+  }
+}
+
+/* Typing effect */
+.typing {
+  margin-top: 12px;
+  font-size: 1.8rem; // default
+  color: #d3c2ff;
+  font-weight: 600;
+  height: 40px;
+  white-space: nowrap; // <-- prevent wrapping
+  overflow: hidden; // hide overflow text
+  text-overflow: ellipsis; // optional
+  display: inline-block;
+
+  @media (max-width: 1200px) {
+    font-size: 1.6rem; // shrink on smaller screens
+  }
+
+  @media (max-width: 900px) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+  }
+}
+
+.desc {
+  margin-top: 1.4rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #d5d5d5;
+
+  @media (max-width: 900px) {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* RIGHT IMAGE SIDE - improved frame, contrast, and optional flip */
+.right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container around your image */
+.right {
+  position: relative;
+}
+
+/* Orbit base container */
+.orbitContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 520px; /* should be slightly bigger than your image box */
+  height: 520px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 200 !important;
+  animation: rotate-orbit 16s linear infinite;
+}
+
+/* Each icon that orbits */
+.orbitIcon {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  opacity: 0.9;
+}
+
+/* Position icons around the circle */
+.orbitIcon:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.orbitIcon:nth-child(2) {
+  bottom: 0;
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.orbitIcon:nth-child(3) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.orbitIcon:nth-child(4) {
+  top: 30%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+/* Orbit animation */
+@keyframes rotate-orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .orbitContainer {
+    width: 320px;
+    height: 320px;
+  }
+  .orbitIcon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.imageWrapper {
+  width: 420px;
+  height: 500px; /* slightly taller for full-body standing images */
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  padding: 4px 4px 0px 4px; /* breathing room for the subject */
+  display: flex;
+  align-items: flex-end; /* place feet lower visually */
+  justify-content: center;
+
+  /* glass + subtle inner dark panel to give contrast for transparent PNG */
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 18, 0.35),
+    rgba(8, 10, 18, 0.22)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(78, 159, 255, 0.08),
+    /* faint neon aura */ inset 0 2px 8px rgba(255, 255, 255, 0.02);
+
+  /* neon outline */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 28px;
+    background: linear-gradient(
+      90deg,
+      rgba(78, 159, 255, 0.14),
+      rgba(180, 120, 255, 0.12)
+    );
+    filter: blur(16px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  @media (max-width: 900px) {
+    width: 260px;
+    height: 340px;
+    padding: 12px;
+  }
+}
+
+/* The image itself */
+.img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* preserve aspect ratio and full height */
+  display: block;
+  transform-origin: center bottom; /* better flip pivot for standing images */
+  will-change: transform, filter;
+
+  /* subtle drop shadow for depth even on transparent PNGs */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+}
+
+/* Tiny responsive tweak so very tall phones don't crop feet */
+@media (max-width: 420px) {
+  .imageWrapper {
+    height: 300px;
+  }
+  .img {
+    height: 100%;
+  }
+}
+
+/* Neon floating particles */
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(125, 150, 255, 0.8);
+  filter: blur(6px);
+  animation: floatParticle 6s infinite ease-in-out;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+/* Unique positions using nth-child */
+.particle:nth-child(3) {
+  top: 12%;
+  left: 8%;
+}
+.particle:nth-child(4) {
+  top: 22%;
+  left: 78%;
+}
+.particle:nth-child(5) {
+  top: 40%;
+  left: 18%;
+}
+.particle:nth-child(6) {
+  top: 55%;
+  left: 85%;
+}
+.particle:nth-child(7) {
+  top: 70%;
+  left: 10%;
+}
+.particle:nth-child(8) {
+  top: 82%;
+  left: 56%;
+}
+.particle:nth-child(9) {
+  top: 30%;
+  left: 48%;
+}
+.particle:nth-child(10) {
+  top: 65%;
+  left: 72%;
+}
+.particle:nth-child(11) {
+  top: 48%;
+  left: 32%;
+}
+.particle:nth-child(12) {
+  top: 15%;
+  left: 60%;
+}
+.particle:nth-child(13) {
+  top: 85%;
+  left: 20%;
+}
+.particle:nth-child(14) {
+  top: 10%;
+  left: 40%;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(25px, -25px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+}
+
+.scrollDown {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  font-size: 24px;
+  color: #ffffff;
+  opacity: 0.8;
+
+  font-weight: 300;
+  user-select: none;
+
+  animation: fadeIn 1.6s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}

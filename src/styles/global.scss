@@ -1,0 +1,78 @@
+@use "./_variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: radial-gradient(
+      900px 400px at 10% 10%,
+      rgba(155, 92, 255, 0.06),
+      transparent
+    ),
+    radial-gradient(
+      800px 300px at 90% 90%,
+      rgba(94, 224, 255, 0.04),
+      transparent
+    ),
+    var(--color-bg);
+  color: var(--color-text);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.app-root {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+section {
+  margin: 64px 0;
+}
+
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* neat focused button / outline for neon accent */
+.neon-outline {
+  position: relative;
+  border-radius: 12px;
+}
+.neon-outline::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(94, 224, 255, 0.12),
+    rgba(155, 92, 255, 0.12)
+  );
+  filter: blur(12px);
+}
