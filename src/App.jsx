@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "./components/Home/Hero";
 import About from "./components/About/About";
-// import Skills from "./components/Skills/Skills";
+import Skills from "./components/Skills/Skills";
 // import Projects from "./components/Projects/Projects";
 // import Recommendations from "./components/Recommendations/Recommendations";
 import Contact from "./components/Contact/ContactForm";
@@ -13,7 +13,8 @@ export default function App() {
     <div>
       <Hero />
       <About />
-      {/*<Skills />
+      <Skills />
+      {/*
       <Projects />
       <Education />
       <Certifications />
