@@ -1,6 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 import styles from "./About.module.scss";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 
 export default function About() {
   const companies = [
@@ -122,14 +122,7 @@ export default function About() {
           </div>
         </motion.div>
       </div>
-      {/* Scroll Indicator */}
-      <motion.div
-        className={styles.scrollDown}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        ↓
-      </motion.div>
+      <ScrollIndicator />
     </section>
   );
 }

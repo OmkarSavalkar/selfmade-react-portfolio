@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { projectsData } from "../Projects/ProjectData.js";
 import styles from "./Projects.module.scss";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator.jsx";
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -75,14 +76,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
-
-      <motion.div
-        className={styles.scrollDown}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        ↓
-      </motion.div>
+      <ScrollIndicator />
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./Skills.module.scss";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 
 export default function Skills() {
   const skills = [
@@ -112,13 +113,7 @@ export default function Skills() {
           </motion.div>
         ))}
       </div>
-      <motion.div
-        className={styles.scrollDown}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        ↓
-      </motion.div>
+      <ScrollIndicator />
     </section>
   );
 }

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import styles from "./Hero.module.scss";
 import myImg from "../../assets/myImg.png";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 
 export default function Hero() {
   return (
@@ -132,13 +133,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.div
-        className={styles.scrollDown}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        ↓
-      </motion.div>
+      <ScrollIndicator />
     </section>
   );
 }
