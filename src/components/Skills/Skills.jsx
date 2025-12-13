@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Skills.module.scss";
 
@@ -75,7 +74,6 @@ export default function Skills() {
 
   return (
     <section className={styles.skills} id="skills" data-aos="fade-right">
-      {/* background blobs */}
       <motion.div
         className={styles.shape1}
         animate={{ scale: [1, 1.05, 1] }}
@@ -87,7 +85,6 @@ export default function Skills() {
         transition={{ duration: 8, repeat: Infinity }}
       />
 
-      {/* particles */}
       {Array.from({ length: 12 }).map((_, i) => (
         <div key={i} className={styles.particle}></div>
       ))}
@@ -115,7 +112,6 @@ export default function Skills() {
           </motion.div>
         ))}
       </div>
-      {/* Scroll Indicator */}
       <motion.div
         className={styles.scrollDown}
         animate={{ y: [0, 10, 0] }}

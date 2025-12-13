@@ -5,8 +5,6 @@ import ecommerce4 from "../../assets/ecommerce4.png";
 import rent1 from "../../assets/rent1.png";
 import rent2 from "../../assets/rent2.png";
 import rent3 from "../../assets/rent3.png";
-import connect1 from "../../assets/connect1.png";
-import connect2 from "../../assets/connect2.png";
 import tictactoe1 from "../../assets/tictactoe1.png";
 import tictactoe2 from "../../assets/tictactoe2.png";
 import tictactoe3 from "../../assets/tictactoe3.png";
@@ -49,13 +47,5 @@ export const projectsData = [
     images: [tictactoe1, tictactoe2, tictactoe3, tictactoe4],
     techStack: ["React", "CSS", "JavaScript"],
     liveLink: "https://github.com/OmkarSavalkar/Tic-Tac-Toe",
-  },
-  {
-    title: "Connect Well",
-    description:
-      "A dynamic web application which can be used at organization level to improve employees connectivity within organization. It provides one step platform to get connected with unkown experts for any help in specific technical domains. Covers everything needed to resolve issue.",
-    images: [connect1, connect2],
-    techStack: ["Next.js", "React", "TypeScript", "Material UI", "Node.Js"],
-    liveLink: "https://connectwell-2022.web.app",
   },
 ];

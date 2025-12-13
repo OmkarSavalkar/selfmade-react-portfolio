@@ -1,11 +1,10 @@
-/* Full-screen hero */
 .topLabel {
   position: absolute;
   top: 20px;
   left: 20px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #a0a0ff; /* subtle neon tint */
+  color: #a0a0ff;
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.7;
@@ -15,8 +14,8 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh !important; // <-- IMPORTANT
-  height: 100vh !important; // <-- IMPORTANT
+  min-height: 100vh !important;
+  height: 100vh !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +24,6 @@
   margin: 0;
 }
 
-/* Neon floating blobs */
 .shape1,
 .shape2 {
   position: absolute;
@@ -34,7 +32,6 @@
   z-index: 0;
 }
 
-/* Blue neon blob */
 .shape1 {
   width: 450px;
   height: 450px;
@@ -43,7 +40,6 @@
   left: -120px;
 }
 
-/* Purple neon blob */
 .shape2 {
   width: 450px;
   height: 450px;
@@ -59,7 +55,7 @@
   gap: 4rem;
   width: 100%;
   max-width: 1350px;
-  z-index: 10; // ABOVE neon shapes
+  z-index: 10;
 
   @media (max-width: 900px) {
     flex-direction: column-reverse;
@@ -67,7 +63,6 @@
   }
 }
 
-/* LEFT TEXT CONTENT */
 .left {
   max-width: 550px;
 
@@ -92,20 +87,19 @@
   }
 }
 
-/* Typing effect */
 .typing {
   margin-top: 12px;
-  font-size: 1.5rem; // default
+  font-size: 1.5rem;
   color: #d3c2ff;
   font-weight: 600;
   height: 40px;
-  white-space: nowrap; // <-- prevent wrapping
-  overflow: hidden; // hide overflow text
-  text-overflow: ellipsis; // optional
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: inline-block;
 
   @media (max-width: 1200px) {
-    font-size: 1.6rem; // shrink on smaller screens
+    font-size: 1.6rem;
   }
 
   @media (max-width: 900px) {
@@ -130,7 +124,6 @@
   }
 }
 
-/* RIGHT IMAGE SIDE - improved frame, contrast, and optional flip */
 .right {
   position: relative;
   display: flex;
@@ -138,17 +131,15 @@
   justify-content: center;
 }
 
-/* Container around your image */
 .right {
   position: relative;
 }
 
-/* Orbit base container */
 .orbitContainer {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 520px; /* should be slightly bigger than your image box */
+  width: 520px;
   height: 520px;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -156,7 +147,6 @@
   animation: rotate-orbit 16s linear infinite;
 }
 
-/* Each icon that orbits */
 .orbitIcon {
   position: absolute;
   width: 52px;
@@ -164,7 +154,6 @@
   opacity: 0.9;
 }
 
-/* Position icons around the circle */
 .orbitIcon:nth-child(1) {
   top: 0;
   left: 50%;
@@ -189,7 +178,6 @@
   transform: translateY(-50%);
 }
 
-/* Orbit animation */
 @keyframes rotate-orbit {
   0% {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -199,7 +187,6 @@
   }
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .orbitContainer {
     width: 320px;
@@ -213,16 +200,14 @@
 
 .imageWrapper {
   width: 420px;
-  height: 500px; /* slightly taller for full-body standing images */
+  height: 500px;
   border-radius: 26px;
   overflow: hidden;
   position: relative;
-  padding: 4px 4px 0px 4px; /* breathing room for the subject */
+  padding: 4px 4px 0px 4px;
   display: flex;
-  align-items: flex-end; /* place feet lower visually */
+  align-items: flex-end;
   justify-content: center;
-
-  /* glass + subtle inner dark panel to give contrast for transparent PNG */
   background: linear-gradient(
     180deg,
     rgba(8, 10, 18, 0.35),
@@ -232,9 +217,8 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(78, 159, 255, 0.08),
-    /* faint neon aura */ inset 0 2px 8px rgba(255, 255, 255, 0.02);
+    inset 0 2px 8px rgba(255, 255, 255, 0.02);
 
-  /* neon outline */
   &::after {
     content: "";
     position: absolute;
@@ -257,21 +241,17 @@
   }
 }
 
-/* The image itself */
 .img {
   width: auto;
   height: 100%;
   max-width: 100%;
-  object-fit: contain; /* preserve aspect ratio and full height */
+  object-fit: contain;
   display: block;
-  transform-origin: center bottom; /* better flip pivot for standing images */
+  transform-origin: center bottom;
   will-change: transform, filter;
-
-  /* subtle drop shadow for depth even on transparent PNGs */
   filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
 }
 
-/* Tiny responsive tweak so very tall phones don't crop feet */
 @media (max-width: 420px) {
   .imageWrapper {
     height: 300px;
@@ -281,7 +261,6 @@
   }
 }
 
-/* Neon floating particles */
 .particle {
   position: absolute;
   width: 10px;
@@ -294,7 +273,6 @@
   opacity: 0.8;
 }
 
-/* Unique positions using nth-child */
 .particle:nth-child(3) {
   top: 12%;
   left: 8%;
@@ -389,7 +367,6 @@
   }
 }
 
-/* ---------------- Social Buttons ---------------- */
 .socials {
   display: flex;
   gap: 20px;
@@ -402,19 +379,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
   padding: 12px 18px;
   border-radius: 10px;
-
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.18);
-
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
-
   transition: 0.3s ease;
-
   img {
     width: 22px;
     height: 22px;

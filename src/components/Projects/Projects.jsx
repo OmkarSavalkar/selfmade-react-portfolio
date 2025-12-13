@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { projectsData } from "../Projects/ProjectData.js";
 import styles from "./Projects.module.scss";
@@ -8,7 +8,6 @@ export default function Projects() {
 
   return (
     <section className={styles.projects} id="projects" data-aos="zoom-in">
-      {/* Neon blobs */}
       <motion.div
         className={styles.shape1}
         animate={{ scale: [1, 1.05, 1] }}
@@ -19,14 +18,13 @@ export default function Projects() {
         animate={{ scale: [1, 1.07, 1] }}
         transition={{ repeat: Infinity, duration: 8 }}
       />
-      {/* Particles */}
+
       {Array.from({ length: 12 }).map((_, i) => (
         <div key={i} className={styles.particle} />
       ))}
 
       <div className={styles.wrapper}>
         <h2 className={styles.heading}>Projects</h2>
-
         <div className={styles.projectsGrid}>
           {projectsData.map((project, idx) => (
             <motion.div
@@ -77,7 +75,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
-      {/* Scroll Indicator */}
+
       <motion.div
         className={styles.scrollDown}
         animate={{ y: [0, 10, 0] }}

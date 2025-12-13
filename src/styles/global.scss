@@ -5,9 +5,11 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background: radial-gradient(
       900px 400px at 10% 10%,
@@ -59,11 +61,11 @@ section {
   box-shadow: var(--shadow-soft);
 }
 
-/* neat focused button / outline for neon accent */
 .neon-outline {
   position: relative;
   border-radius: 12px;
 }
+
 .neon-outline::after {
   content: "";
   position: absolute;

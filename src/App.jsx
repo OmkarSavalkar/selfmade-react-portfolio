@@ -6,7 +6,6 @@ import Projects from "./components/Projects/Projects";
 import Recommendations from "./components/Recommendations/Recommendations";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import "./styles/global.scss";
 
 export default function App() {

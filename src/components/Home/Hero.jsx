@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import styles from "./Hero.module.scss";
@@ -7,10 +6,8 @@ import myImg from "../../assets/myImg.png";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      {/* Small top-left label */}
       <div className={styles.topLabel}>Self-coded React Portfolio</div>
 
-      {/* NEON FLOATING BLOBS */}
       <motion.div
         className={styles.shape1}
         animate={{ scale: [1, 1.05, 1] }}
@@ -23,7 +20,6 @@ export default function Hero() {
         transition={{ repeat: Infinity, duration: 7 }}
       ></motion.div>
 
-      {/* ✨ RANDOM FLOATING NEON PARTICLES (10 pcs) */}
       <div className={styles.particle}></div>
       <div className={styles.particle}></div>
       <div className={styles.particle}></div>
@@ -37,9 +33,7 @@ export default function Hero() {
       <div className={styles.particle}></div>
       <div className={styles.particle}></div>
 
-      {/* MAIN WRAPPER */}
       <div className={styles.wrapper}>
-        {/* LEFT TEXT SECTION */}
         <motion.div
           className={styles.left}
           initial={{ opacity: 0, x: -60 }}
@@ -51,7 +45,6 @@ export default function Hero() {
             <br />
             Omkar Savalkar
           </h1>
-
           <h2 className={styles.typing}>
             <Typewriter
               options={{
@@ -65,7 +58,6 @@ export default function Hero() {
               }}
             />
           </h2>
-
           <p className={styles.desc}>
             Building high-performance, scalable, and user-centric applications
             used across USA & UAE with clean architecture, optimized UI, and
@@ -90,8 +82,6 @@ export default function Hero() {
             </a>
           </div>
         </motion.div>
-
-        {/* RIGHT IMAGE SECTION */}
         <motion.div
           className={styles.right}
           initial={{ opacity: 1 }}
@@ -142,7 +132,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         className={styles.scrollDown}
         animate={{ y: [0, 10, 0] }}

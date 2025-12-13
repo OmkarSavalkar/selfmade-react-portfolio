@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Recommendations.module.scss";
-
 import rec1 from "../../assets/rec1.png";
 import rec2 from "../../assets/rec2.png";
 import rec3 from "../../assets/rec3.png";
@@ -12,7 +11,7 @@ export default function Recommendation() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % recommendations.length);
-    }, 5300);
+    }, 5400);
     return () => clearInterval(timer);
   }, []);
 
@@ -22,11 +21,9 @@ export default function Recommendation() {
       id="recommendations"
       data-aos="fade-left"
     >
-      {/* Neon blobs */}
       <div className={styles.shape1}></div>
       <div className={styles.shape2}></div>
 
-      {/* Neon particles */}
       {Array.from({ length: 14 }).map((_, i) => (
         <div key={i} className={styles.particle}></div>
       ))}
