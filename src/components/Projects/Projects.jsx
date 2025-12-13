@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { projectsData } from "../Projects/ProjectData.js";
 import styles from "./Projects.module.scss";
@@ -7,6 +7,18 @@ import FloatingParticles from "../Cosmetics/FloatingParticles/FloatingParticles.
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (hoveredIndex === null) {
+      setActiveImageIndex(0);
+      return;
+    }
+    const interval = setInterval(() => {
+      setActiveImageIndex((prev) => prev + 1);
+    }, 1800);
+    return () => clearInterval(interval);
+  }, [hoveredIndex]);
 
   return (
     <section className={styles.projects} id="projects" data-aos="zoom-in">
@@ -40,19 +52,18 @@ export default function Projects() {
                     key={i}
                     src={img}
                     alt={project.title}
-                    initial={{ opacity: i === 0 ? 1 : 0 }}
+                    className={styles.projectImage}
                     animate={{
                       opacity:
                         hoveredIndex === idx
-                          ? i === (i + 1) % project.images.length
+                          ? activeImageIndex % project.images.length === i
                             ? 1
                             : 0
                           : i === 0
                           ? 1
                           : 0,
                     }}
-                    transition={{ duration: 0.8 }}
-                    className={styles.projectImage}
+                    transition={{ duration: 1, ease: "easeInOut" }}
                   />
                 ))}
               </div>
