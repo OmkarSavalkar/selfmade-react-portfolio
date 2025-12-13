@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./Skills.module.scss";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
+import FloatingParticles from "../FloatingParticles/FloatingParticles";
 
 export default function Skills() {
   const skills = [
@@ -86,9 +87,7 @@ export default function Skills() {
         transition={{ duration: 8, repeat: Infinity }}
       />
 
-      {Array.from({ length: 12 }).map((_, i) => (
-        <div key={i} className={styles.particle}></div>
-      ))}
+      <FloatingParticles />
 
       <h2 className={styles.heading}>Technical Skills</h2>
 

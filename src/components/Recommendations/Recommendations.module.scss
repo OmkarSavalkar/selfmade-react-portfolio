@@ -34,39 +34,6 @@
   right: -120px;
 }
 
-.particle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(125, 150, 255, 0.8);
-  filter: blur(6px);
-  animation: floatParticle 6s infinite ease-in-out;
-  z-index: 3;
-}
-
-@for $i from 1 through 14 {
-  .particle:nth-child(#{$i}) {
-    top: math.random(95) * 1%;
-    left: math.random(95) * 1%;
-  }
-}
-
-@keyframes floatParticle {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translate(20px, -20px);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 0.7;
-  }
-}
-
 .title {
   font-size: 2.8rem;
   font-weight: 800;

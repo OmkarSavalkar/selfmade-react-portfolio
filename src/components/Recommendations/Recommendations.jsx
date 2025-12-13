@@ -3,6 +3,7 @@ import styles from "./Recommendations.module.scss";
 import rec1 from "../../assets/rec1.png";
 import rec2 from "../../assets/rec2.png";
 import rec3 from "../../assets/rec3.png";
+import FloatingParticles from "../FloatingParticles/FloatingParticles";
 
 export default function Recommendation() {
   const recommendations = [rec1, rec2, rec3];
@@ -24,9 +25,7 @@ export default function Recommendation() {
       <div className={styles.shape1}></div>
       <div className={styles.shape2}></div>
 
-      {Array.from({ length: 14 }).map((_, i) => (
-        <div key={i} className={styles.particle}></div>
-      ))}
+      <FloatingParticles />
 
       <h2 className={styles.title}>Recommendations</h2>
 

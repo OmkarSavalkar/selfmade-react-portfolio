@@ -3,6 +3,7 @@ import Typewriter from "typewriter-effect";
 import styles from "./Hero.module.scss";
 import myImg from "../../assets/myImg.png";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
+import FloatingParticles from "../FloatingParticles/FloatingParticles";
 
 export default function Hero() {
   return (
@@ -21,18 +22,7 @@ export default function Hero() {
         transition={{ repeat: Infinity, duration: 7 }}
       ></motion.div>
 
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
-      <div className={styles.particle}></div>
+      <FloatingParticles />
 
       <div className={styles.wrapper}>
         <motion.div

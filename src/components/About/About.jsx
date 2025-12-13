@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./About.module.scss";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
+import FloatingParticles from "../FloatingParticles/FloatingParticles";
 
 export default function About() {
   const companies = [
@@ -34,10 +35,7 @@ export default function About() {
         transition={{ repeat: Infinity, duration: 8 }}
       />
 
-      {/* Neon floating particles */}
-      {Array.from({ length: 14 }).map((_, i) => (
-        <div key={i} className={styles.particle} />
-      ))}
+      <FloatingParticles />
 
       <div className={styles.wrapper}>
         {/* LEFT — ABOUT TEXT */}

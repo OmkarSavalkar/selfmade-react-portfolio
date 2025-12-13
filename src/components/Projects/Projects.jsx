@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { projectsData } from "../Projects/ProjectData.js";
 import styles from "./Projects.module.scss";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator.jsx";
+import FloatingParticles from "../FloatingParticles/FloatingParticles.jsx";
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -20,9 +21,7 @@ export default function Projects() {
         transition={{ repeat: Infinity, duration: 8 }}
       />
 
-      {Array.from({ length: 12 }).map((_, i) => (
-        <div key={i} className={styles.particle} />
-      ))}
+      <FloatingParticles />
 
       <div className={styles.wrapper}>
         <h2 className={styles.heading}>Projects</h2>
