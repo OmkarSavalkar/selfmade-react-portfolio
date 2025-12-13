@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./Skills.module.scss";
-import ScrollIndicator from "../Cosmetics/FloatingParticles/FloatingParticles";
+import ScrollIndicator from "../Cosmetics/ScrollIndicator/ScrollIndicator";
 import FloatingParticles from "../Cosmetics/FloatingParticles/FloatingParticles";
 
 export default function Skills() {

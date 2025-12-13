@@ -30,52 +30,13 @@ body {
   overflow-x: hidden;
 }
 
-.app-root {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 48px 20px;
-}
-
-.container {
-  width: 90%;
-  max-width: var(--container-width);
-  margin: 0 auto;
-}
-
+/* Better section stacking */
 section {
-  margin: 0;
-  padding: 64px 0;
+  padding: clamp(48px, 8vh, 96px) 0;
 }
 
-.glass {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
-  border-radius: 14px;
-  padding: 22px;
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-soft);
-}
-
-.neon-outline {
-  position: relative;
-  border-radius: 12px;
-}
-
-.neon-outline::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  z-index: -1;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    rgba(94, 224, 255, 0.12),
-    rgba(155, 92, 255, 0.12)
-  );
-  filter: blur(12px);
+/* Containers */
+.container {
+  width: min(90%, var(--container-width));
+  margin: 0 auto;
 }

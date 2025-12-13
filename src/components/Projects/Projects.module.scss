@@ -3,74 +3,88 @@
 .projects {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh; /* mobile-safe */
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: clamp(80px, 12vw, 120px) 0;
 
   .wrapper {
-    width: 95%;
-    max-width: 1300px;
+    width: min(95%, 1300px);
     z-index: 10;
   }
 
   .heading {
-    font-size: 2.6rem;
+    font-size: clamp(2rem, 5vw, 2.6rem);
     font-weight: 800;
     color: white;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(24px, 5vw, 32px);
     text-align: center;
   }
 
+  /* Grid */
   .projectsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(16px, 3vw, 32px);
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
   }
 
+  /* Card */
   .projectCard {
     background: rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 18px;
+    padding: clamp(16px, 3vw, 20px);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     position: relative;
+    transition: transform 0.3s ease;
 
     h3 {
       color: white;
-      margin: 12px 0 6px 0;
+      margin: 12px 0 6px;
+      font-size: clamp(1.1rem, 3vw, 1.25rem);
     }
 
     p {
       color: #d3d3d3;
-      font-size: 0.95rem;
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      line-height: 1.5;
     }
 
     .techStack {
-      margin: 10px 0;
+      margin: 12px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+
       span {
         background: rgba(255, 255, 255, 0.12);
         padding: 4px 10px;
         border-radius: 8px;
-        margin-top: 5px;
-        margin-right: 5px;
-        font-size: 0.8rem;
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
         color: white;
+        white-space: nowrap;
       }
     }
 
     .links {
-      margin-top: 15px;
+      margin-top: 14px;
       text-align: center;
+
       a {
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
         color: #a1c3ff;
         text-decoration: none;
+        transition: color 0.3s ease;
+
         &:hover {
-          color: aqua !important;
+          color: aqua;
         }
       }
     }
@@ -78,21 +92,21 @@
     .imageContainer {
       position: relative;
       width: 100%;
-      height: 180px;
+      height: clamp(160px, 30vw, 200px);
       margin-bottom: 12px;
 
       img {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: 14px;
       }
     }
   }
 
+  /* Neon blobs */
   .shape1,
   .shape2 {
     position: absolute;
