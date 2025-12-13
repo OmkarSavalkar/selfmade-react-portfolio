@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { projectsData } from "../Projects/ProjectData.js";
 import styles from "./Projects.module.scss";
-import ScrollIndicator from "../ScrollIndicator/ScrollIndicator.jsx";
-import FloatingParticles from "../FloatingParticles/FloatingParticles.jsx";
+import ScrollIndicator from "../Cosmetics/ScrollIndicator/ScrollIndicator.jsx";
+import FloatingParticles from "../Cosmetics/FloatingParticles/FloatingParticles.jsx";
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);

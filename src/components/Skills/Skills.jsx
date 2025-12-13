@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./Skills.module.scss";
-import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
-import FloatingParticles from "../FloatingParticles/FloatingParticles";
+import ScrollIndicator from "../Cosmetics/FloatingParticles/FloatingParticles";
+import FloatingParticles from "../Cosmetics/FloatingParticles/FloatingParticles";
 
 export default function Skills() {
   const skills = [
@@ -75,7 +75,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className={styles.skills} id="skills" data-aos="fade-right">
+    <section className={styles.skills} id="skills" data-aos="zoom-in">
       <motion.div
         className={styles.shape1}
         animate={{ scale: [1, 1.05, 1] }}

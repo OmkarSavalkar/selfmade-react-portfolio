@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import styles from "./Hero.module.scss";
 import myImg from "../../assets/myImg.png";
-import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
-import FloatingParticles from "../FloatingParticles/FloatingParticles";
+import ScrollIndicator from "../Cosmetics/ScrollIndicator/ScrollIndicator";
+import FloatingParticles from "../Cosmetics/FloatingParticles/FloatingParticles";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.topLabel}>Self-coded React Portfolio</div>
+    <section className={styles.hero} id="home">
+      <div className={styles.topLabel}>Selfmade React Portfolio</div>
 
       <motion.div
         className={styles.shape1}

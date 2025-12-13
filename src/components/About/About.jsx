@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./About.module.scss";
-import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
-import FloatingParticles from "../FloatingParticles/FloatingParticles";
+import ScrollIndicator from "../Cosmetics/ScrollIndicator/ScrollIndicator";
+import FloatingParticles from "../Cosmetics/FloatingParticles/FloatingParticles";
 
 export default function About() {
   const companies = [
@@ -22,7 +22,7 @@ export default function About() {
   ];
 
   return (
-    <section className={styles.about} id="about" data-aos="fade-up">
+    <section className={styles.about} id="about" data-aos="zoom-in">
       {/* Floating neon blobs */}
       <motion.div
         className={styles.shape1}
