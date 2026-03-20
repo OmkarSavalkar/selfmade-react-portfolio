@@ -7,22 +7,22 @@ export default function Skills() {
   const skills = [
     {
       name: "React",
-      level: "Proficient",
+      level: "Expert",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     },
     {
       name: "Vue",
-      level: "Proficient",
+      level: "Expert",
       logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
     },
     {
       name: "Next.js",
-      level: "Intermediate",
+      level: "Expert",
       logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
     },
     {
       name: "JavaScript",
-      level: "Proficient",
+      level: "Expert",
       logo: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
     },
     {
@@ -32,27 +32,27 @@ export default function Skills() {
     },
     {
       name: "Redux",
-      level: "Beginner",
+      level: "Intermediate",
       logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
     },
     {
       name: "Bootstrap",
-      level: "Proficient",
+      level: "Expert",
       logo: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
     },
     {
       name: "Material UI",
-      level: "Intermediate",
+      level: "Expert",
       logo: "https://mui.com/static/logo.png",
     },
     {
       name: "Git",
-      level: "Proficient",
+      level: "Expert",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     },
     {
       name: "Agile / Scrum",
-      level: "Proficient",
+      level: "Expert",
       logo: "data:image/svg+xml;utf8,\
 <svg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'>\
 <circle cx='32' cy='32' r='28' stroke='%23FBC02D' stroke-width='4' fill='none'/>\
@@ -64,13 +64,18 @@ export default function Skills() {
     },
     {
       name: "API Integration",
-      level: "Proficient",
+      level: "Expert",
       logo: "https://cdn-icons-png.flaticon.com/512/1048/1048943.png",
     },
     {
-      name: "Debugging",
-      level: "Proficient",
+      name: "Jest / React Testing Library",
+      level: "Intermediate",
       logo: "https://cdn-icons-png.flaticon.com/512/751/751381.png",
+    },
+    {
+      name: "Accessibility (A11y)",
+      level: "Beginner",
+      logo: "https://cdn-icons-png.flaticon.com/512/10552/10552295.png",
     },
   ];
 

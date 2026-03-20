@@ -7,15 +7,15 @@ export default function About() {
   const companies = [
     {
       name: "Cavista Technology (Axxess)",
-      role: "Frontend Engineer",
-      duration: "2022 — Present",
+      role: "Frontend Engineer II",
+      duration: "Feb 2023 — Present",
       logo: "https://www.cavistatech.com/wp-content/uploads/2023/06/cavista-logo-2305.svg",
-      whiteBg: true, // <-- White box background
+      whiteBg: true,
     },
     {
       name: "Xoriant",
       role: "Software Engineer",
-      duration: "2021 — 2022",
+      duration: "Aug 2021 — Feb 2023",
       logo: "https://www.xoriant.com/cdn/ff/h8j4-N1kFokMkyOEiHIQVjpbRE5vP8EOCe4cCjK-sP4/1618405020/public/Xoriant-Logo.png",
       whiteBg: false,
     },
@@ -49,7 +49,7 @@ export default function About() {
           <h2 className={styles.heading}>About Me</h2>
 
           <p className={styles.text}>
-            I’m a Frontend Engineer with <b>4.5 years</b> of experience building
+            I’m a Frontend Engineer with <b>4.8 years</b> of experience building
             high-performance, scalable, and user-centric web applications using{" "}
             <b>React, Vue, and Next.js</b>. I hold a Bachelor’s degree (B.E) in
             Computer Engineering (2021)
