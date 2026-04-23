@@ -49,7 +49,7 @@ export default function About() {
           <h2 className={styles.heading}>About Me</h2>
 
           <p className={styles.text}>
-            I’m a Frontend Engineer with <b>4.8 years</b> of experience building
+            I’m a Frontend Engineer with <b>4+ years</b> of experience building
             high-performance, scalable, and user-centric web applications using{" "}
             <b>React, Vue, and Next.js</b>. I hold a Bachelor’s degree (B.E) in
             Computer Engineering (2021)

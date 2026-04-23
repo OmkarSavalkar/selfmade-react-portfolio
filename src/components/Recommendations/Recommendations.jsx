@@ -3,10 +3,11 @@ import styles from "./Recommendations.module.scss";
 import rec1 from "../../assets/rec1.png";
 import rec2 from "../../assets/rec2.png";
 import rec3 from "../../assets/rec3.png";
+import rec4 from "../../assets/rec4.png";
 import FloatingParticles from "../Cosmetics/FloatingParticles/FloatingParticles";
 
 export default function Recommendation() {
-  const recommendations = [rec1, rec2, rec3];
+  const recommendations = [rec4, rec3, rec2, rec1];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
